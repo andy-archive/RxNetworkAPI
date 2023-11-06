@@ -33,7 +33,7 @@ class BoxOfficeAPIManager {
             
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 
-                if let error {
+                if let _ = error {
                     value.onError(APIError.unknown)
                     return
                 }
@@ -50,6 +50,7 @@ class BoxOfficeAPIManager {
                         value.onNext(dailyBoxOfficeData)
                     }
                     catch {
+                        value.onError(APIError.decodeError)
                         return
                     }
                 }

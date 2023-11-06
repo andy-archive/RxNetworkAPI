@@ -8,16 +8,15 @@
 import Foundation
 
 import RxSwift
+import RxCocoa
 
 class MovieSearchViewModel {
     
-    var movieItem: [String]
+    var dailyBoxOfficeList = PublishSubject<[DailyBoxOfficeList]>()
+    
+    var data: [DailyBoxOfficeList]
     
     init() {
-        movieItem = ["그대들은 어떻게 살 것인가", "소년들", "30일", "톡 투 미", "용감한 시민", "퍼피 구조대: 더 마이티 무비", "블루 자이언트", "플라워 킬링 문", "스즈메의 문단속", "테일러 스위프트 디 에라스 투어"]
-    }
-    
-    func fetchCellData() -> Observable<[String]> {
-        return Observable.of(movieItem)
+        self.data = []
     }
 }

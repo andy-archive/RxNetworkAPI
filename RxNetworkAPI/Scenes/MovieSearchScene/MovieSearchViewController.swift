@@ -28,6 +28,9 @@ final class MovieSearchViewController: UIViewController {
     
     private let viewModel = MovieSearchViewModel()
     
+    private var movieList: [DailyBoxOfficeList] = []
+    private lazy var items = BehaviorSubject(value: movieList)
+    
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -40,11 +43,21 @@ final class MovieSearchViewController: UIViewController {
     }
     
     private func bind() {
-        viewModel.fetchCellData()
+        items
             .bind(to: tableView.rx.items(cellIdentifier: MovieSearchTableViewCell.identifier, cellType: MovieSearchTableViewCell.self)) { (row, element, cell) in
-                cell.movieRankLabel.text = "\(row + 1)위"
-                cell.movieTitleLabel.text = element
-                cell.movieReleaseDateLabel.text = "\(Date().toString(type: .year))"
+                cell.movieRankLabel.text = "\(element.rank)위"
+                cell.movieTitleLabel.text = element.movieNm
+                cell.movieReleaseDateLabel.text = "개봉일: \(element.openDt)"
+            }
+            .disposed(by: disposeBag)
+        
+        let request = BoxOfficeAPIManager
+            .fetchData(date: "20231105")
+            .asDriver(onErrorJustReturn: DailyBoxOfficeModel(boxOfficeResult: BoxOfficeResult(boxofficeType: "일별 박스오피스", showRange: "20000101~20000101", dailyBoxOfficeList: [])))
+        
+        request
+            .drive(with: self) { owner, result in
+                owner.items.onNext(result.boxOfficeResult.dailyBoxOfficeList)
             }
             .disposed(by: disposeBag)
     }

@@ -17,21 +17,9 @@ struct BoxOfficeResult: Codable {
 }
 
 struct DailyBoxOfficeList: Codable {
-    let rnum, rank, rankInten: String
-    let rankOldAndNew: RankOldAndNew
-    let movieCd, movieNm, openDt, salesAmt: String
-    let salesShare, salesInten, salesChange, salesAcc: String
-    let audiCnt, audiInten, audiChange, audiAcc: String
-    let scrnCnt, showCnt: String
-
+    let rank, movieNm, openDt: String
+    
     enum CodingKeys: String, CodingKey {
-        case rnum, rank, rankInten, rankOldAndNew
-        case movieCd, movieNm, openDt, salesAmt, salesShare, salesInten, salesChange, salesAcc, audiCnt, audiInten, audiChange, audiAcc, scrnCnt, showCnt
+        case rank, movieNm, openDt
     }
-}
-
-//MARK: RankOldAndNew
-
-enum RankOldAndNew: String, Codable {
-    case old = "OLD"
 }
