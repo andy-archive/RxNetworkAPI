@@ -92,7 +92,7 @@
 		388EFE402AF8B94900940D59 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				388EFE422AF8BA6000940D59 /* MovieScene */,
+				388EFE422AF8BA6000940D59 /* MovieSearchScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -107,12 +107,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		388EFE422AF8BA6000940D59 /* MovieScene */ = {
+		388EFE422AF8BA6000940D59 /* MovieSearchScene */ = {
 			isa = PBXGroup;
 			children = (
 				388EFE432AF8BA8000940D59 /* MovieSearchViewController.swift */,
 			);
-			path = MovieScene;
+			path = MovieSearchScene;
 			sourceTree = "<group>";
 		};
 		388EFE4D2AF8BB8800940D59 /* Utilities */ = {
