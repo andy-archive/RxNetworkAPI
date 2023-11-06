@@ -8,6 +8,8 @@
 import UIKit
 
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class MovieSearchViewController: UIViewController {
 
@@ -24,22 +26,35 @@ final class MovieSearchViewController: UIViewController {
         return view
     }()
     
+    private let viewModel = MovieSearchViewModel()
+    
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
         configureLayout()
+        
+        bind()
+    }
+    
+    private func bind() {
+        viewModel.fetchCellData()
+            .bind(to: tableView.rx.items(cellIdentifier: MovieSearchTableViewCell.identifier, cellType: MovieSearchTableViewCell.self)) { (row, element, cell) in
+                cell.movieRankLabel.text = "\(row + 1)위"
+                cell.movieTitleLabel.text = element
+                cell.movieReleaseDateLabel.text = "\(Date().toString(type: .year))"
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configure() {
         view.backgroundColor = Constants.Color.Background.main
         
-        navigationController?.navigationBar.topItem?.title = "영화 검색"
+        navigationController?.navigationBar.topItem?.title = "박스오피스 순위"
         
         self.navigationItem.searchController = searchContoller
-        
-        tableView.delegate = self
-        tableView.dataSource = self
     }
     
     private func configureLayout() {
@@ -48,21 +63,5 @@ final class MovieSearchViewController: UIViewController {
         tableView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
-    }
-}
-
-extension MovieSearchViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieSearchTableViewCell.identifier, for: indexPath) as? MovieSearchTableViewCell else { return UITableViewCell() }
-        return cell
     }
 }

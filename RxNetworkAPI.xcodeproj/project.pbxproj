@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		388D00502AF8DBF400786545 /* MovieSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388D004F2AF8DBF400786545 /* MovieSearchTableViewCell.swift */; };
+		388D00522AF8FF9900786545 /* MovieSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388D00512AF8FF9900786545 /* MovieSearchViewModel.swift */; };
+		388D00542AF904DB00786545 /* Extension+DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388D00532AF904DB00786545 /* Extension+DateFormat.swift */; };
 		388EFE2C2AF8B8B800940D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EFE2B2AF8B8B800940D59 /* AppDelegate.swift */; };
 		388EFE2E2AF8B8B800940D59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EFE2D2AF8B8B800940D59 /* SceneDelegate.swift */; };
 		388EFE352AF8B8B900940D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 388EFE342AF8B8B900940D59 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		388D004F2AF8DBF400786545 /* MovieSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewCell.swift; sourceTree = "<group>"; };
+		388D00512AF8FF9900786545 /* MovieSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchViewModel.swift; sourceTree = "<group>"; };
+		388D00532AF904DB00786545 /* Extension+DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+DateFormat.swift"; sourceTree = "<group>"; };
 		388EFE282AF8B8B800940D59 /* RxNetworkAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxNetworkAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388EFE2B2AF8B8B800940D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388EFE2D2AF8B8B800940D59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,8 +116,9 @@
 		388EFE422AF8BA6000940D59 /* MovieSearchScene */ = {
 			isa = PBXGroup;
 			children = (
-				388EFE432AF8BA8000940D59 /* MovieSearchViewController.swift */,
 				388D004F2AF8DBF400786545 /* MovieSearchTableViewCell.swift */,
+				388EFE432AF8BA8000940D59 /* MovieSearchViewController.swift */,
+				388D00512AF8FF9900786545 /* MovieSearchViewModel.swift */,
 			);
 			path = MovieSearchScene;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				388EFE4F2AF8BB9D00940D59 /* Extension+Appearance.swift */,
+				388D00532AF904DB00786545 /* Extension+DateFormat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,6 +238,8 @@
 				388EFE2E2AF8B8B800940D59 /* SceneDelegate.swift in Sources */,
 				388EFE442AF8BA8000940D59 /* MovieSearchViewController.swift in Sources */,
 				388EFE532AF8BBD500940D59 /* Constants.swift in Sources */,
+				388D00522AF8FF9900786545 /* MovieSearchViewModel.swift in Sources */,
+				388D00542AF904DB00786545 /* Extension+DateFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
