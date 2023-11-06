@@ -20,7 +20,7 @@ final class MovieSearchTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var movieTitleLabel: UILabel = {
+    lazy var movieTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = Constants.Color.Label.main
         label.font = .boldSystemFont(ofSize: Constants.FontSize.title)
@@ -42,10 +42,6 @@ final class MovieSearchTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
         configureLayout()
-        
-        movieRankLabel.text = "1"
-        movieTitleLabel.text = "그대들은 어떻게 살 것인가"
-        movieReleaseDateLabel.text = "2023-10-25"
     }
     
     required init?(coder: NSCoder) {
