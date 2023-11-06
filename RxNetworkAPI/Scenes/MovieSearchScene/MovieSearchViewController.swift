@@ -41,8 +41,10 @@ final class MovieSearchViewController: UIViewController {
     
     private func bind() {
         viewModel.fetchCellData()
-            .bind(to: tableView.rx.items(cellIdentifier: MovieSearchTableViewCell.identifier, cellType: MovieSearchTableViewCell.self)) { (_, element, cell) in
+            .bind(to: tableView.rx.items(cellIdentifier: MovieSearchTableViewCell.identifier, cellType: MovieSearchTableViewCell.self)) { (row, element, cell) in
+                cell.movieRankLabel.text = "\(row + 1)위"
                 cell.movieTitleLabel.text = element
+                cell.movieReleaseDateLabel.text = "\(Date().toString(type: .year))"
             }
             .disposed(by: disposeBag)
     }
@@ -50,7 +52,7 @@ final class MovieSearchViewController: UIViewController {
     private func configure() {
         view.backgroundColor = Constants.Color.Background.main
         
-        navigationController?.navigationBar.topItem?.title = "영화 검색"
+        navigationController?.navigationBar.topItem?.title = "박스오피스 순위"
         
         self.navigationItem.searchController = searchContoller
     }
@@ -63,4 +65,3 @@ final class MovieSearchViewController: UIViewController {
         }
     }
 }
-

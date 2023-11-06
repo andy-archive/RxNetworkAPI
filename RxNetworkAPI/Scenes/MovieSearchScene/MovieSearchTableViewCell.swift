@@ -13,7 +13,7 @@ final class MovieSearchTableViewCell: UITableViewCell {
     
     static let identifier = NSStringFromClass(MovieSearchTableViewCell.self)
     
-    private lazy var movieRankLabel: UILabel = {
+    lazy var movieRankLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: Constants.FontSize.body)
         label.numberOfLines = 1
@@ -28,7 +28,7 @@ final class MovieSearchTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var movieReleaseDateLabel: UILabel = {
+    lazy var movieReleaseDateLabel: UILabel = {
         let label = UILabel()
         label.textColor = Constants.Color.Label.secondary
         label.font = .systemFont(ofSize: Constants.FontSize.body)
@@ -60,13 +60,13 @@ final class MovieSearchTableViewCell: UITableViewCell {
         
         movieTitleLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview().offset(-Constants.Constraint.MovieSearchCell.verticalConstant)
-            $0.leading.equalTo(movieRankLabel.safeAreaLayoutGuide).offset(Constants.Constraint.MovieSearchCell.horitontalConstant)
+            $0.leading.equalTo(movieRankLabel.snp.trailing).offset(Constants.Constraint.MovieSearchCell.horitontalConstant)
             $0.trailing.lessThanOrEqualToSuperview().inset(Constants.Constraint.MovieSearchCell.horitontalConstant)
         }
         
         movieReleaseDateLabel.snp.makeConstraints {
             $0.top.equalTo(movieTitleLabel.snp.bottom).offset(Constants.Constraint.MovieSearchCell.verticalConstant)
-            $0.leading.equalTo(movieRankLabel.safeAreaLayoutGuide).offset(Constants.Constraint.MovieSearchCell.horitontalConstant)
+            $0.leading.equalTo(movieRankLabel.snp.trailing).offset(Constants.Constraint.MovieSearchCell.horitontalConstant)
             $0.trailing.greaterThanOrEqualToSuperview().inset(Constants.Constraint.MovieSearchCell.horitontalConstant)
         }
     }
