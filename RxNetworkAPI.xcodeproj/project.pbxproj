@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		388D00502AF8DBF400786545 /* MovieSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388D004F2AF8DBF400786545 /* MovieSearchTableViewCell.swift */; };
 		388EFE2C2AF8B8B800940D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EFE2B2AF8B8B800940D59 /* AppDelegate.swift */; };
 		388EFE2E2AF8B8B800940D59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EFE2D2AF8B8B800940D59 /* SceneDelegate.swift */; };
 		388EFE352AF8B8B900940D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 388EFE342AF8B8B900940D59 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		388D004F2AF8DBF400786545 /* MovieSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewCell.swift; sourceTree = "<group>"; };
 		388EFE282AF8B8B800940D59 /* RxNetworkAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxNetworkAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388EFE2B2AF8B8B800940D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388EFE2D2AF8B8B800940D59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,7 +94,7 @@
 		388EFE402AF8B94900940D59 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				388EFE422AF8BA6000940D59 /* MovieScene */,
+				388EFE422AF8BA6000940D59 /* MovieSearchScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -107,12 +109,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		388EFE422AF8BA6000940D59 /* MovieScene */ = {
+		388EFE422AF8BA6000940D59 /* MovieSearchScene */ = {
 			isa = PBXGroup;
 			children = (
 				388EFE432AF8BA8000940D59 /* MovieSearchViewController.swift */,
+				388D004F2AF8DBF400786545 /* MovieSearchTableViewCell.swift */,
 			);
-			path = MovieScene;
+			path = MovieSearchScene;
 			sourceTree = "<group>";
 		};
 		388EFE4D2AF8BB8800940D59 /* Utilities */ = {
@@ -224,6 +227,7 @@
 			files = (
 				388EFE502AF8BB9D00940D59 /* Extension+Appearance.swift in Sources */,
 				388EFE552AF8BBDE00940D59 /* Constants+UI.swift in Sources */,
+				388D00502AF8DBF400786545 /* MovieSearchTableViewCell.swift in Sources */,
 				388EFE2C2AF8B8B800940D59 /* AppDelegate.swift in Sources */,
 				388EFE2E2AF8B8B800940D59 /* SceneDelegate.swift in Sources */,
 				388EFE442AF8BA8000940D59 /* MovieSearchViewController.swift in Sources */,
