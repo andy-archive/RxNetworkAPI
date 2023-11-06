@@ -8,8 +8,11 @@
 import Foundation
 
 struct DailyBoxOfficeModel: Codable {
-    let boxofficeType: String
-    let showRange: String
+    let boxOfficeResult: BoxOfficeResult
+}
+
+struct BoxOfficeResult: Codable {
+    let boxofficeType, showRange: String
     let dailyBoxOfficeList: [DailyBoxOfficeList]
 }
 

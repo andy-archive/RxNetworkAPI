@@ -14,6 +14,10 @@ enum Constants {
         enum TabBar {
             static let movieTitle = "MOVIE"
         }
+        
+        enum Address {
+            static let dailyBoxOffice =  "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?"
+        }
     }
     
     enum FontSize {
