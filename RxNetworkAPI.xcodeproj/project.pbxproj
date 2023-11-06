@@ -18,6 +18,8 @@
 		388EFE502AF8BB9D00940D59 /* Extension+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EFE4F2AF8BB9D00940D59 /* Extension+Appearance.swift */; };
 		388EFE532AF8BBD500940D59 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EFE522AF8BBD500940D59 /* Constants.swift */; };
 		388EFE552AF8BBDE00940D59 /* Constants+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EFE542AF8BBDE00940D59 /* Constants+UI.swift */; };
+		388EFE572AF8C05B00940D59 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 388EFE562AF8C05B00940D59 /* .gitignore */; };
+		388EFE592AF8C08200940D59 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 388EFE582AF8C08200940D59 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		388EFE4F2AF8BB9D00940D59 /* Extension+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Appearance.swift"; sourceTree = "<group>"; };
 		388EFE522AF8BBD500940D59 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		388EFE542AF8BBDE00940D59 /* Constants+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+UI.swift"; sourceTree = "<group>"; };
+		388EFE562AF8C05B00940D59 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		388EFE582AF8C08200940D59 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 		388EFE1F2AF8B8B800940D59 = {
 			isa = PBXGroup;
 			children = (
+				388EFE582AF8C08200940D59 /* README.md */,
+				388EFE562AF8C05B00940D59 /* .gitignore */,
 				388EFE2A2AF8B8B800940D59 /* RxNetworkAPI */,
 				388EFE292AF8B8B800940D59 /* Products */,
 			);
@@ -203,6 +209,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				388EFE382AF8B8B900940D59 /* LaunchScreen.storyboard in Resources */,
+				388EFE572AF8C05B00940D59 /* .gitignore in Resources */,
+				388EFE592AF8C08200940D59 /* README.md in Resources */,
 				388EFE352AF8B8B900940D59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
