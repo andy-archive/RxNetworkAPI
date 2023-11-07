@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 
 final class MovieSearchViewController: UIViewController {
-
+    
     private lazy var searchContoller = {
         let search = UISearchController(searchResultsController: nil)
         search.searchBar.placeholder = "날짜를 입력하세요 (YYYYMMDD)"
@@ -28,8 +28,7 @@ final class MovieSearchViewController: UIViewController {
     
     private let viewModel = MovieSearchViewModel()
     
-    private var movieList: [DailyBoxOfficeList] = []
-    private lazy var items = BehaviorSubject(value: movieList)
+    private lazy var items = PublishSubject<[DailyBoxOfficeList]>()
     
     private let disposeBag = DisposeBag()
     
@@ -43,6 +42,23 @@ final class MovieSearchViewController: UIViewController {
     }
     
     private func bind() {
+        searchContoller.searchBar
+            .rx
+            .searchButtonClicked
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .withLatestFrom(searchContoller.searchBar.rx.text.orEmpty, resultSelector: { _, query in
+                guard query.count == 8, let _ = Int(query) else { return "20231101" }
+                return query
+            })
+            .flatMap { query in
+                BoxOfficeAPIManager.fetchData(date: query)
+            }
+            .subscribe(with: self, onNext: { owner, result in
+                let data = result.boxOfficeResult.dailyBoxOfficeList
+                owner.items.onNext(data)
+            })
+            .disposed(by: disposeBag)
+        
         items
             .bind(to: tableView.rx.items(cellIdentifier: MovieSearchTableViewCell.identifier, cellType: MovieSearchTableViewCell.self)) { (row, element, cell) in
                 cell.movieRankLabel.text = "\(element.rank)위"
