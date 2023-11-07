@@ -8,6 +8,7 @@
 import UIKit
 
 import SnapKit
+import RxSwift
 
 final class MovieSearchTableViewCell: UITableViewCell {
     
@@ -36,6 +37,8 @@ final class MovieSearchTableViewCell: UITableViewCell {
         return label
     }()
     
+    private var disposeBag = DisposeBag()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -46,6 +49,12 @@ final class MovieSearchTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        disposeBag = DisposeBag()
     }
     
     private func configureLayout() {
